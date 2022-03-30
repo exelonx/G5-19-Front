@@ -1,8 +1,8 @@
-var UrlSocios = 'http://localhost:90/G5_19/controller/socio_negocio.php?op=GetSocios';
-var UrlPostSocios = 'http://localhost:90/G5_19/controller/socio_negocio.php?op=InsertSocio';
-var UrlPostInsertSocio = 'http://localhost:90/G5_19/controller/socio_negocio.php?op=GetSocio';
-var UrlPutUpdateSocio = 'http://localhost:90/G5_19/controller/socio_negocio.php?op=UpdateSocio';
-var UrlDeleteSocio = 'http://localhost:90/G5_19/controller/socio_negocio.php?op=DeleteSocio';
+var UrlSocios = 'http://52.152.236.67:90/G5_19/controller/socio_negocio.php?op=GetSocios';
+var UrlPostSocios = 'http://52.152.236.67:90/G5_19/controller/socio_negocio.php?op=InsertSocio';
+var UrlPostInsertSocio = 'http://52.152.236.67:90/G5_19/controller/socio_negocio.php?op=GetSocio';
+var UrlPutUpdateSocio = 'http://52.152.236.67:90/G5_19/controller/socio_negocio.php?op=UpdateSocio';
+var UrlDeleteSocio = 'http://52.152.236.67:90/G5_19/controller/socio_negocio.php?op=DeleteSocio';
 
 $(document).ready(function(){ //función anónima que no lleva nombre
 
