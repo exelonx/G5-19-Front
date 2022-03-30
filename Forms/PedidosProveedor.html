@@ -11,6 +11,7 @@
     crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/JS/PedidosProveedor.js"></script>
+    <link rel="stylesheet" href="/CSS/estilos.css">
 </head>
 <body>
     <div class="container">
@@ -29,19 +30,50 @@
                             <tr>
                                 <th>ID</th>
                                 <th>ID SOCIO</th>
-                                <th>FECHA DE PEDIDO</th>
+                                <th>FECHA DEL PEDIDO</th>
                                 <th>DETALLE</th>
                                 <th>SUB TOTAL</th>
                                 <th>ISV</th>
                                 <th>TOTAL</th>
-                                <th>FECHA ENTREGA</th>
+                                <th>FECHA DE ENTREGA</th>
                                 <th>ESTADO</th>
                             </tr>
                         </thead>
-                        <tbody class="PedidoProveedor">
-                            
+                        <tbody id="PedidosProveedor">  
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+        <div class="formulario">
+            <div class="row">
+                <div class="col-12">
+                    <h3>
+                        Agregar Pedido de Proveedor
+                    </h3>
+                </div>
+                <div class="col-12">
+                    <form class="pedidoProveedor" id="formularios">
+                        <label for="">ID</label>
+                        <input type="text" id="ID" class="form-control" placeholder="Ingrese el ID">
+                        <label for="">ID SOCIO</label>
+                        <input type="text" id="ID_SOCIO" class="form-control" placeholder="Ingrese el ID del Socio">
+                        <label for="">FECHA DEL PEDIDO</label>
+                        <input type="date" id="FECHA_PEDIDO" class="form-control" placeholder="Ingrese la fecha del pedido">
+                        <label for="">DETALLE</label>
+                        <input type="text" id="DETALLE" class="form-control" placeholder="Ingrese el detalle del pedido">
+                        <label for="">PRECIO</label>
+                        <input type="number" id="SUB_TOTAL" class="form-control" placeholder="Ingrese el precio">
+                        <label for="">FECHA DE ENTREGA</label>
+                        <input type="date" id="FECHA_ENTREGA" class="form-control" placeholder="Ingrese la fecha de entrega">
+                        <label for="">ESTADO</label>
+                        <input type="text" id="ESTADO" class="form-control" placeholder="Ingrese el estado del pedido">
+                        <hr>
+                        <div class="btnPedidoProveedor">
+                            <input type="button" id="btnAgregar" onclick="agregarPedidoProveedor()" value="Ingresar Pedido de Proveedor" class="btn btn-success">
+                        </div>
+                        <hr>
+                    </form>
                 </div>
             </div>
         </div>
