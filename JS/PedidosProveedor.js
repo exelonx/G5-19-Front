@@ -27,8 +27,11 @@ const cargarPedidoProveedor = async(id) =>{
     ID.readOnly = true;
     ID_SOCIO.readOnly = true;
     //Actualización del botón
-    boton = `<input type="submit" id="btnSubmit" value="Actualizar Pedido de Proveedor" class="btn btn-primary"></input>`
+    boton = `<input type="submit" id="btnSubmit" value="Actualizar Pedido de Proveedor" class="btn btn-primary"></input>
+             <input type="button" id="btnCancel" onclick="resetParametrosHTML(); limpiarFormularios()" value="Cancelar" class="btn btn-secondary"></input>`
     document.getElementById("btnFormulario").innerHTML = boton;
+    //Focus al formulario
+    FECHA_PEDIDO.focus();
 }
 
 const cargarPedidosProveedor = async() =>{
@@ -83,12 +86,12 @@ const agregarPedidoProveedor = () =>{
         })  //Si la petición de inserción sale exitosa
         .then(res =>res.json())
         .then(response=>{
-            alert(response);
+            swal('¡Inserción Exitosa!',`${response} con ID: ${ID.value}`, 'success');
             limpiarFormularios();
             cargarPedidosProveedor();
         })  //Si la inserción falla
         .catch(error =>{
-            alert(`Error al agregar un nuevo pedido al proveedor \nID inválido o Estado incorrecto\n${error}`)
+            swal('¡Error!',`Error al agregar un nuevo pedido al proveedor: \nID inválido o Estado incorrecto`, 'error')
         })
 }
 
@@ -112,13 +115,13 @@ const actualizarPedidoProveedor = () =>{
         })  //Si la petición de inserción sale exitosa
         .then(res =>res.json())
         .then(response=>{
-            alert(response);
+            swal(`Actualización ID: ${ID.value}` ,response, 'success', {button: false});
             limpiarFormularios();
             cargarPedidosProveedor();
             resetParametrosHTML();
         })  //Si la inserción falla
         .catch(error =>{
-            alert(`Error al actualizar el pedido del proveedor \nEstado incorrecto\n${error}`)
+            swal(`Actualización ID: ${ID.value}`, `Estado incorrecto`, 'error', {button: false})
         })
 }
 
@@ -127,7 +130,7 @@ const eliminarPedidoProveedor = async(id) =>{
         method: 'DELETE',
         body: JSON.stringify({ID:id}),
     })
-    alert(await response.json()); //Imprimir mensaje de la API
+    swal(`Eliminación ID: ${id}`,await response.json(), 'info', {button: false}); //Imprimir mensaje de la API
     await cargarPedidosProveedor();
     resetParametrosHTML();  //No confío en los usuarios, desbloqueo los ID´s y regreso el botón original para evitar bloqueos
     limpiarFormularios();
@@ -147,32 +150,4 @@ window.onload = () =>{
     })
 }
 
-//Funciones complementarias
-function limpiarFormularios(){
-    let formulario = document.getElementById('formularios');
-    console.log(formulario)
-    formulario.reset();
-}
-
-function estadoConvertidor(estado){
-    switch(estado){
-        case 'A':
-            return 'ANULADO';
-        case 'P':
-            return 'PENDIENTE';
-        case 'F':
-            return 'ANULADO';
-    }
-}
-
-function resetParametrosHTML(){
-    //Desbloquear textbox
-    ID.readOnly = false;
-    ID_SOCIO.readOnly = false;
-    //Convertir botón de actualizar a agregar
-    boton = `<input type="submit" id="btnSubmit"  value="Ingresar Pedido de Proveedor" class="btn btn-success"></input>`
-    document.getElementById("btnFormulario").innerHTML = boton;
-}
-
 cargarPedidosProveedor();
-
