@@ -112,6 +112,7 @@ const actualizarPedidoProveedor = () =>{
         FECHA_ENTREGA:FECHA_ENTREGA.value,
         ESTADO:ESTADO.value.toUpperCase()   //Convierte en mayuscula el estado
     };
+    if(compareDatesEntregas(FECHA_PEDIDO.value, FECHA_ENTREGA.value)){
     //Post en la base de datos
     fetch(UrlPutPedidosProveedor, {
             method: 'PUT',
@@ -127,6 +128,7 @@ const actualizarPedidoProveedor = () =>{
         .catch(error =>{
             swal(`Actualización ID: ${ID.value}`, `Estado incorrecto`, 'error', {button: false})
         })
+    }
 }
 
 const eliminarPedidoProveedor = async(id) =>{
