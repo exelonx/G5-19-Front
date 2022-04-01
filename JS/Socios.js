@@ -30,26 +30,28 @@ function CargarSocios(){
 
             for (index = 0; index < MiItems.length; index++) {
                 
-                Valores += '<tr>'+
-                '<td>'+ MiItems[index].ID+'</td>'+
-                '<td>'+ MiItems[index].NOMBRE+'</td>'+
-                '<td>'+ MiItems[index].RAZON_SOCIAL+'</td>'+
-                '<td>'+ MiItems[index].DIRECCION+'</td>'+
-                '<td>'+ MiItems[index].TIPO_SOCIO+'</td>'+
-                '<td>'+ MiItems[index].CONTACTO+'</td>'+
-                '<td>'+ MiItems[index].EMAIL+'</td>'+
-                '<td>'+ MiItems[index].FECHA_CREADO+'</td>'+
-                '<td>'+ MiItems[index].ESTADO+'</td>'+
-                '<td>'+ MiItems[index].TELEFONO+'</td>'+
+                const center = 'class="text-center"';
+                const right = 'class="text-end"';
 
-                '<td>'+
-                '<button class="btn btn-info" onclick="CargarSocio('+MiItems[index].ID+')">Editar</button>'+
-                '</td>'+
-                '<td>'+
-                '<button class="btn btn-danger" onclick="EliminarSocio('+MiItems[index].ID+')">Eliminar</button>'+
-                '</td>'+
+                Valores +=`<tr>
+                <td ${right}> ${MiItems[index].ID}</td>
+                <td ${center}> ${MiItems[index].NOMBRE}</td>
+                <td ${center}> ${MiItems[index].RAZON_SOCIAL}</td>
+                <td ${center}> ${MiItems[index].DIRECCION}</td>
+                <td ${center}> ${MiItems[index].TIPO_SOCIO}</td>
+                <td ${center}> ${MiItems[index].CONTACTO}</td>
+                <td ${center}> ${MiItems[index].EMAIL}</td>
+                <td ${center}> ${MiItems[index].FECHA_CREADO}</td>
+                <td ${center}> ${MiItems[index].ESTADO}</td>
+                <td ${center}> ${MiItems[index].TELEFONO}</td>
 
-                '</tr>';
+                <td ${center}>
+                <button class="btn btn-secondary" onclick="CargarSocio(${MiItems[index].ID})">Editar</button>
+                <hr>
+                <button class="btn btn-danger" onclick="EliminarSocio(${MiItems[index].ID})">Eliminar</button>
+                </td>
+
+                </tr>` 
                 
                 $('.Socios').html(Valores);
 

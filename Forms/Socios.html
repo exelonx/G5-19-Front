@@ -11,16 +11,26 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/G5-19-Front/JS/Socios.js"></script>
+    <script src="/JS/Socios.js"></script>
+
+    <script src="/partials/footer.js"></script>
+    <script src="/partials/navbar.js"></script>
+    <script src="/helpers/LoadTemplate.js"></script>
+
+    <link rel="stylesheet" href="/CSS/estilos.css">
 
 </head>
-<body>
+<body onload = "load()">
+
+    <header id="headerNavBar" class="navbarFixed"></header>
+
+    <div class="divEspacio"></div>
     
-    <div class ="container">
+    <div id="contenedor" class ="container">
 
         <div class = "consulta rt-4">
 
-            <div class="row">
+           <!--  /*<div class="row">
 
                 <div class="col-6">
 
@@ -28,33 +38,41 @@
 
                 </div>
 
-            </div>
-            <div class="box-body">
+            </div>*/ -->
+
+            <div class="box-body color redondeoInferior redondeoSuperior">
+
+                <h3 class="text-center tamaño align-middle redondeoSuperior">
+
+                    LISTA DE SOCIOS DEL NEGOCIO
+
+                </h3>
 
                 <div class="table-response">
 
-                    <table class="table table-hover">
+                    <table class="table table-hover table-dark table-striped table-bordered">
 
-                        <thead>
+                        <thead id="headers">
 
-                            <tr>
+                            <tr class="text-center align-middle">
 
-                                <th>ID</th>
-                                <th>NOMBRE</th>
-                                <th>RAZON SOCIAL</th>
-                                <th>DIRECCIÓN</th>
-                                <th>TIPO DE SOCIO</th>
-                                <th>CONTACTO</th>
-                                <th>EMAIL</th>
-                                <th>FECHA DE CREACIÓN</th>
-                                <th>ESTADO</th>
-                                <th>TELEFONO</th>
+                                <th id="HeaderId">ID</th>
+                                <th id="HeaderNombre">NOMBRE</th>
+                                <th id="HeaderRazonSocial">RAZON SOCIAL</th>
+                                <th id="HeaderDireccion">DIRECCIÓN</th>
+                                <th id="HeaderTipoSocio">TIPO DE SOCIO</th>
+                                <th id="HeaderContacto">CONTACTO</th>
+                                <th id="HeaderEmail">EMAIL</th>
+                                <th id="HeaderFechaCreacion">FECHA DE CREACIÓN</th>
+                                <th id="HeaderEstado">ESTADO</th>
+                                <th id="HeaderTelefono">TELÉFONO</th>
+                                <th id="HeaderAcciones">ACCIONES</th>
 
                             </tr>
 
                         </thead>
 
-                        <tbody class="Socios">
+                        <tbody class="Socios  align-middle">
 
                           
 
@@ -70,38 +88,42 @@
         
         </div>
 
+        <div style="height: 20px;"></div>
+
+        <hr>
+
         <div class="formulario">
 
-            <div class="row">
+            <div>
 
-                <div class="col-12">
+                <div class="col-12 color redondeoSuperior redondeoInferior">
 
-                    <h3>Agregar Socios</h3>
+                    <h3 class="text-center align-middle">
 
-                </div>
+                        AGREGAR SOCIOS
 
-                <div class="col-12">
+                    </h3>
 
-                    <form class="socio">
+                    <form class="socio  p-3 mb-2 bg-dark text-white redondeoInferior">
 
                         <label for="">Nombre</label>
-                        <input type="text" id="NOMBRE" class="form-control" placeholder="Ingrese el Nombre">
+                        <input type="text" id="NOMBRE" class="form-control" placeholder="Ingrese el Nombre" required>
                         <label for="">Razón Social</label>
-                        <input type="text" id="RAZON_SOCIAL" class="form-control" placeholder="Ingrese la Razón Social">
+                        <input type="text" id="RAZON_SOCIAL" class="form-control" placeholder="Ingrese la Razón Social" required>
                         <label for="">Dirección</label>
-                        <input type="text" id="DIRECCION" class="form-control" placeholder="Ingrese el Dirección">
+                        <input type="text" id="DIRECCION" class="form-control" placeholder="Ingrese el Dirección" required>
                         <label for="">Tipo de Socio</label>
-                        <input type="text" id="TIPO_SOCIO" class="form-control" placeholder="Ingrese el Tipo de Socio">
+                        <input type="text" id="TIPO_SOCIO" class="form-control" placeholder="Ingrese el Tipo de Socio" required>
                         <label for="">Contacto</label>
-                        <input type="text" id="CONTACTO" class="form-control" placeholder="Ingrese a la Persona de Contacto">
+                        <input type="text" id="CONTACTO" class="form-control" placeholder="Ingrese a la Persona de Contacto" required>
                         <label for="">Email</label>
-                        <input type="text" id="EMAIL" class="form-control" placeholder="Ingrese el Correo">
+                        <input type="text" id="EMAIL" class="form-control" placeholder="Ingrese el Correo" required>
                         <label for="">Fecha de Cración</label>
-                        <input type="text" id="FECHA_CREADO" class="form-control" placeholder="Ingrese la Fecha de Creación">
+                        <input type="date" id="FECHA_CREADO" class="form-control" placeholder="Ingrese la Fecha de Creación" required>
                         <label for="">Estado</label>
-                        <input type="text" id="ESTADO" class="form-control" placeholder="Ingrese el Estado del Socio">
+                        <input type="text" id="ESTADO" class="form-control" placeholder="Ingrese el Estado del Socio" required>
                         <label for="">Teléfono</label>
-                        <input type="text" id="TELEFONO" class="form-control" placeholder="Ingrese el Número de Teléfono">
+                        <input type="text" id="TELEFONO" class="form-control" placeholder="Ingrese el Número de Teléfono" required>
 
                         <hr>
 
@@ -122,6 +144,19 @@
 
     </div>
 
+    <div class="container">
+
+        <div style="height: 20px;"></div>
+
+        <hr>
+        
+    </div>
+
+    <div class="footerColor">
+
+        <div class="container" id="footerDiv"></div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
