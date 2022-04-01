@@ -93,20 +93,29 @@ function AgregarSocio(){
 
         success: function(response){
 
+            
+            // swal('¡Inserción Exitosa!',`Se ha agregado un nuevo socio`, 'success');
             console.log(response);
             CargarSocios();
-            swal('¡Inserción Exitosa!', 'Se ha agregado el socio con el ID:' + idSocio, 'success');
+            
         },
 
         error: function(){
 
-            swal('¡Error!',`Error al agregar un nuevo socio: \nTipo de Socio inválido o Estado incorrecto`, 'error')
+            /* swal('¡Error!',`Error al agregar un nuevo socio: \nTipo de Socio inválido o Estado incorrecto`, 'error');
+            return null; */
+
+            alert('Error al agregar al nuevo socio');
 
         }
 
     });
 
+    // alert('El Nuevo Socio ha sido Creado');
+    
     alert('El Nuevo Socio ha sido Creado');
+    // swal("¡Inserción Exitosa!", "El Nuevo Socio ha sido Creado", "success");
+            
 
 }
 
