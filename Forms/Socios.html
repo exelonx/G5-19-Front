@@ -16,6 +16,9 @@
     <script src="/partials/footer.js"></script>
     <script src="/partials/navbar.js"></script>
     <script src="/helpers/LoadTemplate.js"></script>
+    <script src="/helpers/SociosComplementos.js"></script>
+
+    <script src="https://sweetalert.js.org/guides/"></script>
 
     <link rel="stylesheet" href="/CSS/estilos.css">
 
@@ -48,25 +51,25 @@
 
                 </h3>
 
-                <div class="table-response">
+                <div class="table table-responsive">
 
                     <table class="table table-hover table-dark table-striped table-bordered">
 
-                        <thead id="headers">
+                        <thead>
 
                             <tr class="text-center align-middle">
 
-                                <th id="HeaderId">ID</th>
-                                <th id="HeaderNombre">NOMBRE</th>
-                                <th id="HeaderRazonSocial">RAZON SOCIAL</th>
-                                <th id="HeaderDireccion">DIRECCIÓN</th>
-                                <th id="HeaderTipoSocio">TIPO DE SOCIO</th>
-                                <th id="HeaderContacto">CONTACTO</th>
-                                <th id="HeaderEmail">EMAIL</th>
-                                <th id="HeaderFechaCreacion">FECHA DE CREACIÓN</th>
-                                <th id="HeaderEstado">ESTADO</th>
-                                <th id="HeaderTelefono">TELÉFONO</th>
-                                <th id="HeaderAcciones">ACCIONES</th>
+                                <th id="Headers">ID</th>
+                                <th id="Headers">NOMBRE</th>
+                                <th id="Headers">RAZON SOCIAL</th>
+                                <th id="Headers">DIRECCIÓN</th>
+                                <th id="Headers">TIPO DE SOCIO</th>
+                                <th id="Headers">CONTACTO</th>
+                                <th id="Headers">EMAIL</th>
+                                <th id="Headers">FECHA DE CREACIÓN</th>
+                                <th id="Headers">ESTADO</th>
+                                <th id="Headers">TELÉFONO</th>
+                                <th id="Headers">ACCIONES</th>
 
                             </tr>
 
@@ -113,7 +116,7 @@
                         <label for="">Dirección</label>
                         <input type="text" id="DIRECCION" class="form-control" placeholder="Ingrese el Dirección" required>
                         <label for="">Tipo de Socio</label>
-                        <input type="text" id="TIPO_SOCIO" class="form-control" placeholder="Ingrese el Tipo de Socio" required>
+                        <input type="number" id="TIPO_SOCIO" class="form-control" placeholder="Ingrese el Tipo de Socio" required>
                         <label for="">Contacto</label>
                         <input type="text" id="CONTACTO" class="form-control" placeholder="Ingrese a la Persona de Contacto" required>
                         <label for="">Email</label>
@@ -121,7 +124,7 @@
                         <label for="">Fecha de Cración</label>
                         <input type="date" id="FECHA_CREADO" class="form-control" placeholder="Ingrese la Fecha de Creación" required>
                         <label for="">Estado</label>
-                        <input type="text" id="ESTADO" class="form-control" placeholder="Ingrese el Estado del Socio" required>
+                        <input type="number" id="ESTADO" class="form-control" placeholder="Ingrese el Estado del Socio" required>
                         <label for="">Teléfono</label>
                         <input type="text" id="TELEFONO" class="form-control" placeholder="Ingrese el Número de Teléfono" required>
 

@@ -27,22 +27,25 @@ function CargarSocios(){
 
             var MiItems= response;
             var Valores='';
+            
 
             for (index = 0; index < MiItems.length; index++) {
                 
                 const center = 'class="text-center"';
                 const right = 'class="text-end"';
+                const EstadoSocio = estadoIIConvertidor(MiItems[index].ESTADO);
+                const TipoSocio = tipoSocioConvertidor(MiItems[index].TIPO_SOCIO)
 
                 Valores +=`<tr>
                 <td ${right}> ${MiItems[index].ID}</td>
                 <td ${center}> ${MiItems[index].NOMBRE}</td>
                 <td ${center}> ${MiItems[index].RAZON_SOCIAL}</td>
                 <td ${center}> ${MiItems[index].DIRECCION}</td>
-                <td ${center}> ${MiItems[index].TIPO_SOCIO}</td>
+                <td ${center}> ${TipoSocio}</td>
                 <td ${center}> ${MiItems[index].CONTACTO}</td>
                 <td ${center}> ${MiItems[index].EMAIL}</td>
                 <td ${center}> ${MiItems[index].FECHA_CREADO}</td>
-                <td ${center}> ${MiItems[index].ESTADO}</td>
+                <td ${center}> ${EstadoSocio}</td>
                 <td ${center}> ${MiItems[index].TELEFONO}</td>
 
                 <td ${center}>
@@ -92,12 +95,12 @@ function AgregarSocio(){
 
             console.log(response);
             CargarSocios();
-
+            swal('¡Inserción Exitosa!', 'Se ha agregado el socio con el ID:' + idSocio, 'success');
         },
 
         error: function(){
 
-            alert('Error al Crear un Nuevo Socio');
+            swal('¡Error!',`Error al agregar un nuevo socio: \nTipo de Socio inválido o Estado incorrecto`, 'error')
 
         }
 
