@@ -29,3 +29,15 @@ function convertToLempiras(numero){
     let preResult = (new Intl.NumberFormat('en-HN',{ currency: 'USD', style: 'currency'}).format(numero));
     return preResult.replace('$', 'L.')
 }
+
+function compareDatesEntregas(fechaString1, fechaString2){  //Valida que la fecha de pedido sea anterior a la de entrega
+    let fecha1 = new Date(fechaString1);
+    let fecha2 = new Date(fechaString2);
+
+    if(fecha1>fecha2){
+        swal("¡Error!", "Fecha de entrega debe suceder después a la fecha del pedido", "warning", {button: false});
+        return false;
+    }
+
+    return true;
+}

@@ -79,22 +79,24 @@ const agregarPedidoProveedor = async() =>{
         ESTADO:ESTADO.value.toUpperCase()   //Convierte en mayuscula el estado
     };
     //Post en la base de datos
-    try {
-        const response = await fetch(UrlPostPedidosProveedor, {
-            method: 'POST',
-            body: JSON.stringify(datos),
-            headers:{
-                'Content-Type': 'application/json'
-            }
-        })  //Si la petición de inserción sale exitosa
-            swal('¡Inserción Exitosa!',`${await response.json()} con ID: ${ID.value}`, 'success');
-            limpiarFormularios();
-            cargarPedidosProveedor();
-        
-    } catch (error) {
-            console.log(error)
-            swal('¡Error!',`Error al agregar un nuevo pedido al proveedor: \nID inválido o Estado incorrecto`, 'error')
-    }
+    if(compareDatesEntregas(FECHA_PEDIDO.value, FECHA_ENTREGA.value)){
+        try {
+            const response = await fetch(UrlPostPedidosProveedor, {
+                method: 'POST',
+                body: JSON.stringify(datos),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })  //Si la petición de inserción sale exitosa
+                swal('¡Inserción Exitosa!',`${await response.json()} con ID: ${ID.value}`, 'success');
+                limpiarFormularios();
+                cargarPedidosProveedor();
+            
+        } catch (error) {
+                console.log(error)
+                swal('¡Error!',`Error al agregar un nuevo pedido al proveedor: \nID inválido o Estado incorrecto`, 'error')
+        }
+    }   
 }
 
 const actualizarPedidoProveedor = () =>{
