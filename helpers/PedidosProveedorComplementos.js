@@ -12,7 +12,7 @@ function estadoConvertidor(estado){
         case 'P':
             return 'PENDIENTE';
         case 'F':
-            return 'ANULADO';
+            return 'FINALIZADO';
     }
 }
 
@@ -21,6 +21,11 @@ function resetParametrosHTML(){
     ID.readOnly = false;
     ID_SOCIO.readOnly = false;
     //Convertir botón de actualizar a agregar
-    boton = `<input type="submit" id="btnSubmit"  value="Ingresar Pedido de Proveedor" class="btn btn-success"></input>`
+    boton = `<input type="submit" id="btnSubmit" value="Ingresar Pedido de Proveedor" class="btn btn-secondary"></input>`
     document.getElementById("btnFormulario").innerHTML = boton;
+}
+
+function convertToLempiras(numero){
+    let preResult = (new Intl.NumberFormat('en-HN',{ currency: 'USD', style: 'currency'}).format(numero));
+    return preResult.replace('$', 'L.')
 }

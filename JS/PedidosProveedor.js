@@ -39,21 +39,23 @@ const cargarPedidosProveedor = async() =>{
     let data = await response.json();
     let body = "";
     data.forEach((element) => {
+        const center = `class="text-center"`;
+        const right = `class="text-end"`;
         //Convertir el estado a palabra completa
         let estado = estadoConvertidor(element.ESTADO);
         //Obtener los valores de la tabla por elemento
-        body += `<tr>
-            <td>${element.ID}</td>
-            <td>${element.ID_SOCIO}</td>
-            <td>${element.FECHA_PEDIDO}</td>
-            <td>${element.DETALLE}</td>
-            <td>${element.SUB_TOTAL}</td>
-            <td>${element.TOTAL_ISV}</td>
-            <td>${element.TOTAL}</td>
-            <td>${element.FECHA_ENTREGA}</td>
-            <td>${estado}</td>
-            <td>
-            <button class="btn btn-primary" onclick="cargarPedidoProveedor(${element.ID})">Editar</button>  
+        body += `<tr class="redondeoInferior">
+            <td ${center}>${element.ID}</td>
+            <td ${center}>${element.ID_SOCIO}</td>
+            <td ${center}>${element.FECHA_PEDIDO}</td>
+            <td>${element.DETALLE.toUpperCase()}</td>
+            <td ${right}>${convertToLempiras(element.SUB_TOTAL)}</td>
+            <td ${right}>${convertToLempiras(element.TOTAL_ISV)}</td>
+            <td ${right}>${convertToLempiras(element.TOTAL)}</td>
+            <td ${center}>${element.FECHA_ENTREGA}</td>
+            <td ${center}>${estado}</td>
+            <td ${center}>
+            <button class="btn btn btn-secondary" onclick="cargarPedidoProveedor(${element.ID})">Editar</button>  
             <button class="btn btn-danger" onclick="eliminarPedidoProveedor(${element.ID})">Eliminar</button>
             </td>
         </tr>`
@@ -63,7 +65,7 @@ const cargarPedidosProveedor = async() =>{
     }); 
 }
 
-const agregarPedidoProveedor = () =>{
+const agregarPedidoProveedor = async() =>{
     //Datos del formulario
     let datos={
         ID:ID.value,
@@ -77,22 +79,22 @@ const agregarPedidoProveedor = () =>{
         ESTADO:ESTADO.value.toUpperCase()   //Convierte en mayuscula el estado
     };
     //Post en la base de datos
-    fetch(UrlPostPedidosProveedor, {
+    try {
+        const response = await fetch(UrlPostPedidosProveedor, {
             method: 'POST',
             body: JSON.stringify(datos),
             headers:{
                 'Content-Type': 'application/json'
             }
         })  //Si la petición de inserción sale exitosa
-        .then(res =>res.json())
-        .then(response=>{
-            swal('¡Inserción Exitosa!',`${response} con ID: ${ID.value}`, 'success');
+            swal('¡Inserción Exitosa!',`${await response.json()} con ID: ${ID.value}`, 'success');
             limpiarFormularios();
             cargarPedidosProveedor();
-        })  //Si la inserción falla
-        .catch(error =>{
+        
+    } catch (error) {
+            console.log(error)
             swal('¡Error!',`Error al agregar un nuevo pedido al proveedor: \nID inválido o Estado incorrecto`, 'error')
-        })
+    }
 }
 
 const actualizarPedidoProveedor = () =>{
@@ -137,17 +139,20 @@ const eliminarPedidoProveedor = async(id) =>{
 }
 
 //Eventos
-window.onload = () =>{
+window.onload =() =>{
     //Al darle click al boton submit
-    document.getElementById('formularios').addEventListener('submit', (e)=>{
+    document.getElementById('formularios').addEventListener('submit', async(e)=>{
         e.preventDefault();
         if(btnSubmit.value === 'Ingresar Pedido de Proveedor'){
-            agregarPedidoProveedor();
+            await agregarPedidoProveedor()
         }else if(btnSubmit.value === 'Actualizar Pedido de Proveedor'){
             actualizarPedidoProveedor();
-        }
-        
+        }   
     })
+    //Carga el navbar
+    navbarLoad();
+    footerLoad();
 }
 
 cargarPedidosProveedor();
+
