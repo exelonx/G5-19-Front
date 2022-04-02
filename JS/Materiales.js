@@ -4,11 +4,13 @@ const UrlPostmaterial = 'http://52.152.236.67:90/G5_19/controller/materiales.php
 const UrlPutmaterial = 'http://52.152.236.67:90/G5_19/controller/materiales.php?op=Updatematerial';
 const UrlDeletematerial = 'http://52.152.236.67:90/G5_19/controller/materiales.php?op=Deletematerial';
 
-$(document).ready(function () {
+$(document).ready(function () { //funcion para cargar los materiales a la página
 
     CargarMateriales();
 
 });
+
+//Funciones CRUD
 
 function CargarMateriales() {
 
@@ -25,30 +27,34 @@ function CargarMateriales() {
 
             for (index = 0; index < MiItems.length; index++) {
 
-                Valores += '<tr>' +
-                    '<td>' + MiItems[index].ID + '</td>' +
-                    '<td>' + MiItems[index].DESCRIPCION + '</td>' +
-                    '<td>' + MiItems[index].UNIDAD + '</td>' +
-                    '<td>' + MiItems[index].COSTO + '</td>' +
-                    '<td>' + MiItems[index].PRECIO + '</td>' +
-                    '<td>' + MiItems[index].APLICA_ISV + '</td>' +
-                    '<td>' + MiItems[index].PORCENTAJE_ISV + '</td>' +
-                    '<td>' + MiItems[index].ESTADO + '</td>' +
-                    '<td>' + MiItems[index].ID_SOCIO + '</td>' +
+                const right = `class="text-end"`;
+                const center = 'class="text-center"';
+                const EstadoMaterial = EstadoConverter(MiItems[index].ESTADO);
+                const aplicaisv = AplicaISV(MiItems[index].APLICA_ISV)
 
-                    '<td>' +
-                    '<button class="btn btn-info" onclick="CargarMaterial(' + MiItems[index].ID + ')">Editar</button>' +
-                    '<button class="btn btn-danger" onclick="EliminarMaterial(' + MiItems[index].ID + ')">Eliminar</button>' +
-                    '</td>' +
+                Valores +=`<tr>
+                <td ${center}> ${MiItems[index].ID}</td> 
+                <td ${center}> ${MiItems[index].DESCRIPCION}</td>
+                <td ${center}> ${MiItems[index].UNIDAD}</td>
+                <td ${right}> ${convertToLempiras(MiItems[index].COSTO)}</td>
+                <td ${right}> ${convertToLempiras(MiItems[index].PRECIO)}</td>
+                <td ${center}> ${aplicaisv}</td>
+                <td ${center}> ${MiItems[index].PORCENTAJE_ISV}%</td>
+                <td ${center}> ${EstadoMaterial}</td>
+                <td ${center}> ${MiItems[index].ID_SOCIO}</td>
 
-                    '</tr>';
+                    <td ${center}>
+                    <button class="btn btn-info" onclick="CargarMaterial(${MiItems[index].ID})">Editar</button>
+                    <button class="btn btn-danger" onclick="EliminarMaterial(${MiItems[index].ID})">Eliminar</button>
+                    </td> 
+
+                    </tr>`
 
                 $('.Materiales').html(Valores);
             }
         }
     });
 }
-
 
 function AgregarMaterial() {
 
@@ -63,7 +69,7 @@ function AgregarMaterial() {
         ID_SOCIO: $('#ID_SOCIO').val(),
     };
 
-    var datosmaterialjson = JSON.stringify(datosmaterial);
+    var datosmaterialjson = JSON.stringify(datosmaterial);  //stringify Convierte código JavaScript a código JSON
     
     $.ajax({
         url: UrlPostmaterial,
@@ -86,15 +92,15 @@ function AgregarMaterial() {
 
 }
 
-
 function CargarMaterial(idmaterial) {
 
     var datosmaterial = {
         ID: idmaterial
     };
 
-    var datosmaterialjson = JSON.stringify(datosmaterial);
-    alert(datosmaterialjson);
+    var datosmaterialjson = JSON.stringify(datosmaterial); //stringify Convierte código JavaScript a código JSON
+
+    alert(datosmaterialjson); 
 
     $.ajax({
         url: UrlGetmaterial,
@@ -144,7 +150,7 @@ function ActualizarMaterial(idmaterial) {
         ID_SOCIO: $('#ID_SOCIO').val(),
     };
 
-    var datosmaterialjson = JSON.stringify(datosmaterial);
+    var datosmaterialjson = JSON.stringify(datosmaterial); //stringify Convierte código JavaScript a código JSON
 
     $.ajax({
 
@@ -183,7 +189,7 @@ function EliminarMaterial(idmaterial) {
 
     alert('Se ha seleccionado el Material con ID: ' + idmaterial);
 
-    var datosmaterialjson = JSON.stringify(datosmaterial);
+    var datosmaterialjson = JSON.stringify(datosmaterial); //stringify Convierte código JavaScript a código JSON
 
     $.ajax({
 
