@@ -116,6 +116,7 @@ body{
 /*Filtros para logos*/
 
 .logoFiltros{
+    transition: .3s ease all;
     filter: opacity(0.6) drop-shadow(0 0 0px rgba(0,0,0,0)); 
 }
 
