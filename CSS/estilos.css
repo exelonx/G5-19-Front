@@ -1,6 +1,4 @@
 .avatar{
-    width: 40px;
-    height: 50px;
     border-radius: 100%;
 }
 
@@ -28,6 +26,8 @@ body{
     position: fixed;
     width: 100%;
     top: 0;
+    opacity: 0.9;
+    box-shadow: 0px 0px 7px black;
 }
 
 .divEspacio{
@@ -47,7 +47,8 @@ body{
 .footerColor{
     background-color: #212529;
     width: 100%;
-    height: 115px;    
+    height: 115px;
+    box-shadow: 0px 0px 10px black;    
 }
 
 
@@ -70,6 +71,59 @@ body{
 }
 
 .logoFooterUNAH{
-    width: 80px;
+    width: 65px;
     height: 40px;
+}
+
+.texto{
+    text-align: justify;
+}
+
+.perfil{
+    height: 170px;
+    width: 170px;
+    border-radius: 5px;
+}
+
+.funcion{
+    color: #dcdcaa;
+}
+
+.fotoFormulario{
+    height: 250px;
+    width: 170px;
+    border-radius: 5px;
+}
+
+.footerTextColor{
+
+    color: #6c757d;
+
+}
+
+.footerColorAcciones{
+
+    transition: .3s ease all;
+
+}
+
+.footerTextColor:hover{
+
+    color: #fff;
+       
+}
+
+/*Filtros para logos*/
+
+.logoFiltros{
+    transition: .3s ease all;
+    filter: opacity(0.6) drop-shadow(0 0 0px rgba(0,0,0,0)); 
+}
+
+.logoFiltros:hover{
+    filter: opacity(0.6) drop-shadow(0 0 0px white); 
+}
+
+.logo:hover{
+    filter: opacity(1) drop-shadow(0 0 5px white); 
 }

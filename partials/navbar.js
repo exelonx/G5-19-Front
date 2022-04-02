@@ -2,7 +2,7 @@ const navbarLoad = ()=>{
     let navbar = '';
     navbar = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand fs-3" href="#"><img src="../img/UNAH LOGO PROYECTO.png" class="logo" alt=""></a>
+        <a class="navbar-brand fs-3" href="https://www.unah.edu.hn/"><img src="../img/UNAH LOGO PROYECTO.png" class="logo" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,13 +21,13 @@ const navbarLoad = ()=>{
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../Forms/Socios.html">Socios de Negocio</a></li>
                 <li><a class="dropdown-item" href="../Forms/PedidosProveedor.html">Pedidos de Proveedores</a></li>
-                <li><a class="dropdown-item" href="#">Materiales</a></li>
+                <li><a class="dropdown-item" href="../Forms/Materiales.html">Materiales</a></li>
                 </ul>
             </li>
             </ul>
             
         </div>
-        <span class="navbar-text fs-4 ">
+        <span class="navbar-text fs-4 footerColorAcciones footerTextColor">
                 ${document.title}
             </span>
         </div>
