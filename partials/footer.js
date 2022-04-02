@@ -19,8 +19,8 @@ const footerLoad = () =>{
                             <li><a class="dropdown-item" href="../Forms/Materiales.html">Materiales</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a href="https://www.facebook.com/unahoficial" class="px-2 text-muted"><img src="../img/U.png" class="logoFooterUNAH" alt=""></a></li>
-                        <li class="nav-item"><a href="https://www.facebook.com/InformaticaAdmitivaUNAH" class="px-2 text-muted"><img src="../img/LOGO INFORMÁTICA PA PROYECTO.png" class="logoFooter" alt=""></a></li>
+                        <li class="nav-item"><a href="https://www.facebook.com/unahoficial" class="px-2 text-muted"><img src="../img/U.png" class="logoFooterUNAH logoFiltros" alt=""></a></li>
+                        <li class="nav-item"><a href="https://www.facebook.com/InformaticaAdmitivaUNAH" class="px-2 text-muted"><img src="../img/LOGO INFORMÁTICA PA PROYECTO.png" class="logoFooter logoFiltros" alt=""></a></li>
                     </ul>
                 </footer>`
 

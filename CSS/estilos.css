@@ -112,3 +112,17 @@ body{
     color: #fff;
        
 }
+
+/*Filtros para logos*/
+
+.logoFiltros{
+    filter: opacity(0.6) drop-shadow(0 0 0px rgba(0,0,0,0)); 
+}
+
+.logoFiltros:hover{
+    filter: opacity(0.6) drop-shadow(0 0 0px white); 
+}
+
+.logo:hover{
+    filter: opacity(1) drop-shadow(0 0 5px white); 
+}
