@@ -127,3 +127,24 @@ body{
 .logo:hover{
     filter: opacity(1) drop-shadow(0 0 5px white); 
 }
+
+.git{
+    height: 50px;
+    width: 60px;
+    transition: 0.5s ease all;
+}
+
+.gitBorder{
+    filter: opacity(0.3) drop-shadow(0 0 0px white);
+}
+
+.git:hover{
+    transition: 0.3s ease all;
+    filter: opacity(1) drop-shadow(0 0 5px white); 
+}
+
+
+
+
+
+

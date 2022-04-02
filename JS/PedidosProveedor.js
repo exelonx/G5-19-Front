@@ -1,8 +1,8 @@
 const UrlGetPedidosProveedor = 'http://52.152.236.67:90/G5_19/controller/pedidos_proveedor.php?op=GetPedidosProveedores';
-const UrlGetUnPedidoProveedor = 'http://localhost:90/G5_19/controller/pedidos_proveedor.php?op=GetPedidosProveedor';
+const UrlGetUnPedidoProveedor = 'http://52.152.236.67:90/G5_19/controller/pedidos_proveedor.php?op=GetPedidosProveedor';
 const UrlPostPedidosProveedor = 'http://52.152.236.67:90/G5_19/controller/pedidos_proveedor.php?op=InsertPedidosProveedor';
-const UrlPutPedidosProveedor = 'http://localhost:90/G5_19/controller/pedidos_proveedor.php?op=UpdatePedidosProveedor';
-const UrlDeletePedidosProveedor = 'http://localhost:90/G5_19/controller/pedidos_proveedor.php?op=DeletePedidosProveedor';
+const UrlPutPedidosProveedor = 'http://52.152.236.67:90/G5_19/controller/pedidos_proveedor.php?op=UpdatePedidosProveedor';
+const UrlDeletePedidosProveedor = 'http://52.152.236.67:90/G5_19/controller/pedidos_proveedor.php?op=DeletePedidosProveedor';
 
 //Funciones de mantenimiento
 const cargarPedidoProveedor = async(id) =>{

@@ -2,8 +2,8 @@ const footerLoad = () =>{
     let footer = `<footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
                     <p class="col-md-4 mb-0 footerColorAcciones footerTextColor">&copy; 2022 UNAH - G5-19 - Lenguaje de Programacion IV</p>
 
-                    <a href="" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        
+                    <a href="https://github.com/exelonx/G5-19-Front" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <img onclick="lanzarExtra()" src="/img/githubLogo.png" class="img-fluid git gitBorder" alt="">
                     </a>
 
                     <ul class="nav col-md-4 justify-content-end">

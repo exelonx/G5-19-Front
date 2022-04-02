@@ -1,4 +1,6 @@
 const navbarLoad = ()=>{
+    let { home, info, formD } = selectorNav(document.title) //Retorna un objeto literal para modificar el template dinamicamente en la iluminacion de nombres
+
     let navbar = '';
     navbar = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -9,13 +11,13 @@ const navbarLoad = ()=>{
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../Home.html">Home</a>
+                <a class="nav-link ${home}" aria-current="page" href="../Home.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../Informacion.html">Información</a>
+                <a class="nav-link ${info}" href="../Informacion.html">Información</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link ${formD} dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Formularios
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
