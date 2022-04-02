@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="/JS/Materiales.js"></script> 
+    <script src="/partials/footer.js"></script>
+    <script src="/partials/navbar.js"></script>
+    <script src="/helpers/LoadTemplate.js"></script>
+    <link rel="stylesheet" href="/CSS/estilos.css">
+
+</head>
+<body onload="load();">
+    <header id="headerNavBar" class="navbarFixed"></header>
+    <div class="divEspacio"></div>
+    <div class ="container">
+
+        <div class = "consulta rt-4">
+            <div class="box-body  color redondeoInferior redondeoSuperior">
+                <h3 class="text-center tamaño align-middle redondeoSuperior">LISTA DE MATERIALES</h3>
+                <div class="table table-responsive">
+
+                    <table class="table table-hover table-dark table-striped table-bordered">
+
+                        <thead>
+
+                            <tr class="text-center align-middle">
+
+                                <th>ID</th>
+                                <th>DESCRIPCION</th>
+                                <th>UNIDAD</th>
+                                <th>COSTO</th>
+                                <th>PRECIO</th>
+                                <th>APLICA ISV</th>
+                                <th>PORCENTAJE ISV</th>
+                                <th>ESTADO</th>
+                                <th>ID SOCIO</th>
+                                <th>OPCIONES</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody class="Materiales" class="align-middle">
+
+                          
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        
+        
+        </div>
+        <div style="height: 20px;"></div>
+        <hr>
+        <div class="formulario">
+
+            <div>
+
+                <div class="col-12 color redondeoSuperior redondeoInferior">
+                    <h3 class="text-center align-middle">AGREGAR MATERIALES</h3>
+                    <form class="material p-3 mb-2 bg-dark text-white redondeoInferior">
+                        <label for ="">Descripción</label>
+                        <input type="text" id="DESCRIPCION" class="form-control" placeholder="Ingrese la Descripcion">
+                        <label for="">Unidad</label>
+                        <input type="text" id="UNIDAD" class="form-control" placeholder="Ingrese la Unidad">
+                        <label for="">Costo</label>
+                        <input type="number" id="COSTO" class="form-control" placeholder="Ingrese el Costo">
+                        <label for="">Precio</label>
+                        <input type="number" id="PRECIO" class="form-control" placeholder="Ingrese el Precio">
+                        <label for="">Aplica ISV</label>
+                        <input type="text" id="APLICA_ISV" class="form-control" placeholder="Ingrese si aplica el ISV">
+                        <label for="">Porcentaje ISV</label>
+                        <input type="number" id="PORCENTAJE_ISV" class="form-control" placeholder="Ingrese el porcentaje del ISV">
+                        <label for="">Estado</label>
+                        <input type="text" id="ESTADO" class="form-control" placeholder="Ingrese el Estado">
+                        <label for="">ID Socio</label>
+                        <input type="number" id="ID_SOCIO" class="form-control" placeholder="Ingrese el ID del Socio">
+
+                        <hr>
+
+                        <div class="btnmaterial">
+
+                            <input type="submit" id="btnAgregar" onclick="AgregarMaterial()" value="Ingresar Material" 
+                            class="btn btn-success">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+        <div style="height: 20px;"></div>
+        <hr>
+        
+    </div>
+    <div class="footerColor">
+        <div class="container" id="footerDiv"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
