@@ -19,32 +19,124 @@
     <header id="headerNavBar" class="navbarFixed"></header>
     <div class="divEspacio"></div>
 
-    <div>
-        <h1>API REST G5-19</h1>
-        <img src="/img/LOGO INFORMÁTICA PA PROYECTO.png" width="100" height="100" alt="">
-    </div>
+    
 
-    <div class="container">
+    <div class="container" >
+        <div class="container redondeoSuperior d-flex flex-wrap color justify-content-between align-items-center py-2">
+            <img src="/img/waifu.jpeg" width="85" height="100" class="avatar" alt="">
+            <ul class="nav justify-content-end">
+                <span class="fs-1 align-middle ">AVANCE II: CONSUMO API REST G5-19</span>
+            </ul>
+            <img src="/img/IAW.png" width="100" height="100" class="rounded float-end" alt="">
+        </div>
         <div class="consulta nt-4">
-            <div class="box-body color redondeoInferior redondeoSuperior">
+            <div class="box-body color redondeoInferior redondeoSuperior" >
                 <div class="table table-responsive">
                     <table class="table table-hover table-dark table-striped table-bordered">
                         <thead>
-                            <tr class="text-center align-middle">
-                                <th></th>
+                            <tr class="text-center align-middle ">
                                 <th>NOMBRE</th>
+                                <th>N° DE CUENTA</th>
                                 <th>FORMULARIO DESARROLLADO</th>
-                                <th>EXPLICACION</th>
+                                <th>EXPLICACIÓN</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody id="PedidosProveedor" class="align-middle">
                             <tr class="redondeoInferior">
-                                <td>asd</td>
-                                <td>KEVIN DANIEL CUBAS GARCIA</td>
-                                <td>PEDIDOS PROVEEDOR</td>
-                                <td>asd</td>
-                                <td>asd</td>
+                                <td class="text-center ">
+                                    <img src="/img/kevin.jpg" class="perfil" alt="">
+                                    <hr>
+                                    KEVIN CUBAS
+                                </td>
+                                <td class="text-center">20151021268</td>
+                                <td class="text-center">PEDIDOS PROVEEDOR</td>
+                                <td >
+                                    <ul class="texto"><span class="text-decoration-underline">Métodos de mantenimiento</span>
+                                        <li>
+                                            <span style="color:#dcdcaa;">cargarPedidoProveedor</span>(<span style="color:#9cdcf0;">id</span>): Función asíncrona que recibe como parametro el ID para cargar solo 1 registro de la base de datos en el formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">cargarPedidosProveedor</span>(): Función asíncrona que carga a todos los registros de la BD en la tabla.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">agregarPedidoProveedor</span>(): Función asíncrona que agrega un nuevo registro de los datos ingresados desde el formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">actualizarPedidoProveedor</span>(): Función asíncrona que actualiza un registro en la BD mediante el método PUT.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">eliminarPedidoProveedor</span>(<span style="color:#9cdcf0;">id</span>): Función asíncrona que recibe como parametro el ID para eliminar un registro en la BD.
+                                        </li>
+                                        <hr>
+                                        <span class="text-decoration-underline">Métodos complementarios</span>
+                                        <li>
+                                            <span style="color:#dcdcaa;">limpiarFormularios</span>(): Como el nombre lo indica, limpia el formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">estadoConvertidor</span>(<span style="color:#9cdcf0;">estado</span>): Función que recibe como parametro el estado (A, F y P) y retorna la palabra completa (ANULADO, FINALIZADO, PENDIENTE).
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">resetParametrosHTML</span>(): Utilizada para regresar el estado original del formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">convertToLempiras</span>(<span style="color:#9cdcf0;">numero</span>): convierte números en formato de moneda nacional (Honduras).
+                                        </li>
+                                        <hr>
+                                        <span class="text-decoration-underline">Validación</span>
+                                        <li>
+                                            <span style="color:#dcdcaa;">compareDatesEntregas</span>(<span style="color:#9cdcf0;">fechaString1</span>, <span style="color:#9cdcf0;">fechaString2</span>): compara la fecha de pedido con la fecha de entrega, validando que la fecha de pedido no sea después a la de entrega.
+                                        </li>
+                                    </ul>
+                                </td>
+                                
+                            </tr>
+                            <tr class="redondeoInferior">
+                                <td class="text-center ">
+                                    <img src="/img/adoniss.jpg" class="perfil" alt="">
+                                    <hr>
+                                    ADONISS PONCE
+                                </td>
+                                <td class="text-center">20171002692</td>
+                                <td class="text-center">SOCIOS</td>
+                                <td>
+                                    <ul class="texto"><span class="text-decoration-underline">MÉTODOS DE MANTENIMIENTO</span>
+                                        <li>
+                                            <span class="funcion">CargarSocios</span>(): Función AJAX que carga a todos los registros de la BD en la tabla.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">AgregarSocio</span>(): Función AJAX que inserta un nuevo registro a la DB con los datos ingresados en el formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">CargarSocio</span>(<span style="color:#9cdcf0;">idSocio</span>): Función AJAX que carga un solo registro de la DB hacía la tabla.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">ActualizarSocio</span>(<span style="color:#9cdcf0;">idSocio</span>): Función AJAX que actualiza un registro la BD mediante el contenido cargado en el formulario después de usar el boton editar.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">EliminarSocio</span>(<span style="color:#9cdcf0;">idSocio</span>): Función AJAX que recibe como parametro el ID para eliminar un registro en la BD.
+                                        </li>
+                                        <hr>
+                                        <span class="text-decoration-underline">Métodos complementarios</span>
+                                        <li>
+                                            <span style="color:#dcdcaa;">tipoSocioConvertidor</span>(<span style="color:#9cdcf0;">tipo_socio</span>): Función que recibe como parametro el estado (1 y 2) y retorna la palabra completa (ACTIVO, INACTIVO).
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">estadoIIConvertidor</span>(<span style="color:#9cdcf0;">estado</span>): Función que recibe como parametro el estado (1 y 2) y retorna la palabra completa (ACTIVO, INACTIVO).
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr class="redondeoInferior">
+                                <td class="text-center">
+                                    <img src="/img/osamaBinLaden.jpg" class="perfil" alt="">
+                                    <hr>
+                                    DAZZEB NAPKY
+                                </td>
+                                <td class="text-center">20191003187</td>
+                                <td class="text-center">MATERIALES</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -55,7 +147,7 @@
     </div>
 
     <div class="container">
-        <div style="height: 20px;"></div>
+        
         <hr>
         
     </div>
