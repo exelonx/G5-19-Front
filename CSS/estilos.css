@@ -95,4 +95,20 @@ body{
     border-radius: 5px;
 }
 
+.footerTextColor{
 
+    color: #6c757d;
+
+}
+
+.footerColorAcciones{
+
+    transition: .3s ease all;
+
+}
+
+.footerTextColor:hover{
+
+    color: #fff;
+       
+}

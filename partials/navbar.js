@@ -27,7 +27,7 @@ const navbarLoad = ()=>{
             </ul>
             
         </div>
-        <span class="navbar-text fs-4 ">
+        <span class="navbar-text fs-4 footerColorAcciones footerTextColor">
                 ${document.title}
             </span>
         </div>

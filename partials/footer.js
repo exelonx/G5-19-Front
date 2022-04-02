@@ -1,16 +1,16 @@
 const footerLoad = () =>{
     let footer = `<footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                    <p class="col-md-4 mb-0 text-muted">&copy; 2022 UNAH - G5-19 - Lenguaje de Programacion IV</p>
+                    <p class="col-md-4 mb-0 footerColorAcciones footerTextColor">&copy; 2022 UNAH - G5-19 - Lenguaje de Programacion IV</p>
 
                     <a href="" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         
                     </a>
 
                     <ul class="nav col-md-4 justify-content-end">
-                        <li class="nav-item"><a href="../Home.html" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="../Informacion.html" class="nav-link px-2 text-muted">Información</a></li>
+                        <li class="nav-item"><a href="../Home.html" class="nav-link px-2 footerColorAcciones footerTextColor">Home</a></li>
+                        <li class="nav-item"><a href="../Informacion.html" class="nav-link px-2 footerColorAcciones footerTextColor">Información</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle nav-link px-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-link px-2 footerColorAcciones footerTextColor" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Formularios
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
