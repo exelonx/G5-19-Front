@@ -26,7 +26,7 @@
         <div class="container redondeoSuperior d-flex flex-wrap color justify-content-between align-items-center py-2">
             <img src="/img/CEW.png" width="100" height="100" class="avatar" alt="">
             <ul class="nav justify-content-end">
-                <span class="fs-1 align-middle ">AVANCE II: CONSUMO API REST G5-19</span>
+                <span class="fs-1 align-middle título">AVANCE II: CONSUMO API REST G5-19</span>
             </ul>
             <img src="/img/IAW.png" width="100" height="100" class="rounded float-end" alt="">
         </div>
@@ -35,7 +35,7 @@
                 <div class="table table-responsive">
                     <table class="table table-hover table-dark table-striped table-bordered">
                         <thead>
-                            <tr class="text-center align-middle ">
+                            <tr class="text-center align-middle subtítulo">
                                 <th>NOMBRE</th>
                                 <th>N° DE CUENTA</th>
                                 <th>FORMULARIO DESARROLLADO</th>
@@ -120,7 +120,7 @@
                                         <hr>
                                         <span class="text-decoration-underline">Métodos complementarios</span>
                                         <li>
-                                            <span style="color:#dcdcaa;">tipoSocioConvertidor</span>(<span style="color:#9cdcf0;">tipo_socio</span>): Función que recibe como parametro el estado (1 y 2) y retorna la palabra completa (ACTIVO, INACTIVO).
+                                            <span style="color:#dcdcaa;">tipoSocioConvertidor</span>(<span style="color:#9cdcf0;">tipo_socio</span>): Función que recibe como parametro el tipo de socio (1 y 2) y retorna la palabra completa (PROVEEDOR, CLIENTE).
                                         </li>
                                         <li>
                                             <span style="color:#dcdcaa;">estadoIIConvertidor</span>(<span style="color:#9cdcf0;">estado</span>): Función que recibe como parametro el estado (1 y 2) y retorna la palabra completa (ACTIVO, INACTIVO).
@@ -137,7 +137,33 @@
                                 </td>
                                 <td class="text-center">20191003187</td>
                                 <td class="text-center">MATERIALES</td>
-                                <td></td>
+                                <td>
+                                    <ul class="texto"><span class="text-decoration-underline">MÉTODOS DE MANTENIMIENTO</span>
+                                        <li>
+                                            <span class="funcion">CargarMateriales</span>(): Función AJAX que carga a todos los registros de la BD en la tabla.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">AgregarMaterial</span>(): Función AJAX que inserta un nuevo registro a la DB con los datos ingresados en el formulario.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">CargarMaterial</span>(<span style="color:#9cdcf0;">idmaterial</span>): Función AJAX que carga un solo registro de la DB hacía la tabla.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">ActualizarMaterial</span>(<span style="color:#9cdcf0;">idmaterial</span>): Función AJAX que actualiza un registro la BD mediante el contenido cargado en el formulario después de usar el boton editar.
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">EliminarMaterial</span>(<span style="color:#9cdcf0;">idmaterial</span>): Función AJAX que recibe como parametro el ID para eliminar un registro en la BD.
+                                        </li>
+                                        <hr>
+                                        <span class="text-decoration-underline">Métodos complementarios</span>
+                                        <li>
+                                            <span style="color:#dcdcaa;">AplicaISV</span>(<span style="color:#9cdcf0;">aplica_isv</span>): Función que recibe como parametro si se recibe el impuesto sobre ventas (S y N) y retorna la oración completa (APLICA ISV, NO APLICA ISV).
+                                        </li>
+                                        <li>
+                                            <span style="color:#dcdcaa;">EstadoConverter</span>(<span style="color:#9cdcf0;">estado</span>): Función que recibe como parametro el estado (1 y 2) y retorna la palabra completa (ACTIVO, INACTIVO).
+                                        </li>
+                                    </ul>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

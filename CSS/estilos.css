@@ -143,6 +143,32 @@ body{
     filter: opacity(1) drop-shadow(0 0 5px white); 
 }
 
+@font-face {
+
+    font-family: Títulos;
+    src: url('/Fonts/Poppins-Thin.ttf');
+
+}
+
+@font-face {
+
+    font-family: SubTítulos;
+    src: url('/Fonts/PublicaSansRound-Thin.otf');
+
+}
+
+.título{
+
+    font-family: Títulos;
+
+}
+
+.subtítulo{
+
+    font-family: SubTítulos;
+
+}
+
 
 
 
